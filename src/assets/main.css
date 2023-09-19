@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .resultWrapper canvas {
-    @apply max-w-full;
+    @apply max-w-full mx-auto;
+}
+
+input[type='range'] {
+    accent-color: #1E5959;
 }
