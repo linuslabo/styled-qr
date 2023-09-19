@@ -1,32 +1,34 @@
 <template>
   <header class="p-4 md:p-6 lg:p-10 pb-0 md:pb-0 lg:pb-0">
-    <h1 class="text-xl md:text-3xl font-medium">Yet Another QrCode Generator</h1>
+    <h1 class="text-xl md:text-3xl font-medium flex items-center gap-2">Yet Another QrCode Generator
+      <span class="mt-1 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">v2</span>
+    </h1>
     <h2 class="text-gray-600">NO TRACKERS | NO REDIRECTIONS | NO EXPIRATIONS</h2>
   </header>
 
   <main class="md:flex p-4 md:p-6 lg:p-10 items-start md:gap-6 lg:gap-10">
     <div>
-      <form id="configForm" class="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-6 flex-grow">
+      <form id="configForm" class="grid grid-cols-6 gap-x-4 gap-y-2 flex-grow">
 
-        <div class="sm:col-span-4">
+        <div class="col-span-6 sm:col-span-4">
           <label for="url">Content</label>
           <div class="">
             <input type="text" v-model="options.data" name="url" id="url"/>
           </div>
         </div>
-        <div class="sm:col-span-1">
+        <div class="col-span-3 sm:col-span-1">
           <label for="width">Size (px)</label>
           <div class="">
             <input type="number" v-model="options.width" name="width" id="width"/>
           </div>
         </div>
-        <div class="sm:col-span-1">
+        <div class="col-span-3 sm:col-span-1">
           <label for="margin">Margin</label>
           <div class="">
             <input type="number" v-model="options.margin" name="margin" id="margin"/>
           </div>
         </div>
-        <div class="sm:col-span-full grid grid-cols-6 gap-x-4 gap-y-2 bg-gray-50 p-4 md:px-8 rounded-xl mt-4">
+        <div class="col-span-full grid grid-cols-6 gap-x-4 gap-y-2 p-4 md:px-8 rounded-xl mt-4 border border-dashed border-three">
           <div class="col-span-6 sm:col-span-3">
             <label for="pic">Image</label>
             <div class="flex gap-1">
@@ -159,7 +161,7 @@
             <form class="grid grid-cols-6 gap-x-4 gap-y-2 sm:grid-cols-6 flex-grow">
               <div class="col-span-2">
                 <label for="qrType">QR Type</label>
-                <div class="mt-2">
+                <div class="">
                   <input type="number" v-model="options.qrOptions.typeNumber" min="0" max="40" step="1" name="qrType"
                          id="qrType"/>
                 </div>
@@ -233,6 +235,10 @@
                                                                     class="hover:underline">kozakdenys's
       qr-code-styling</a>.
     </div>
+    <div class="mt-4">
+      <span class="px-4 py-2 bg-yellow-50">Missing the old generator? You can find it <a href="https://qr-v1.cascone.net/" class="hover:underline">here!</a></span>
+    </div>
+
   </footer>
 </template>
 
@@ -252,7 +258,6 @@ import type {
 import QRCodeStyling from 'qr-code-styling';
 import {onMounted, ref, watch} from "vue";
 import {MinusSmallIcon, PlusSmallIcon, XCircleIcon} from '@heroicons/vue/24/outline'
-// import {Switch, SwitchGroup, SwitchLabel} from '@headlessui/vue'
 import {
   Disclosure,
   DisclosureButton,
@@ -370,7 +375,7 @@ form label {
 }
 
 form input:not([type="range"]):not([type="color"]) {
-  @apply block w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-three sm:text-sm sm:leading-6;
+  @apply bg-white block w-full rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-three sm:text-sm sm:leading-6;
 }
 
 form input[type="color"] {
