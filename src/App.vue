@@ -149,7 +149,7 @@
       <Disclosure as="div" class="p-6 bg-green-50 rounded-xl mt-10" v-slot="{ open }">
         <dt>
           <DisclosureButton class="flex w-full items-start justify-between text-left text-gray-900">
-            <span class="text-base font-semibold leading-7">Opzioni avanzate</span>
+            <span class="text-base font-semibold leading-7">Advanced options</span>
             <span class="ml-6 flex h-7 items-center">
                   <PlusSmallIcon v-if="!open" class="h-6 w-6" aria-hidden="true"/>
                   <MinusSmallIcon v-else class="h-6 w-6" aria-hidden="true"/>
@@ -199,9 +199,10 @@
 
       <div id="downloadSection" class="mt-4 flex flex-col sm:flex-row flex-nowrap items-end gap-2">
         <div class="flex-grow w-full">
-          <label for="ext" class="block text-sm font-medium leading-6 text-gray-900">Estensione</label>
+          <label for="ext" class="block text-sm font-medium leading-6 text-gray-900">File extension</label>
           <select id="ext" v-model="extension"
-                  class="mt-1 block w-full rounded-md border-0 py-2 pl-2 pr-2 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-three sm:text-sm sm:leading-6">
+                  class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-three sm:text-sm sm:leading-6">
+
             <option value="svg">SVG</option>
             <option value="png">PNG</option>
             <option value="jpeg">JPEG</option>
